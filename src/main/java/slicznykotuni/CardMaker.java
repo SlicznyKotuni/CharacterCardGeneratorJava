@@ -188,7 +188,7 @@ public class CardMaker {
     }
 
     public static void main(String[] args) {
-        RPGCardGenerator generator = new RPGCardGenerator();
-        generator.generateFromFile("characters.csv");
+        CardMaker generator = new CardMaker(); // Utwórz instancję klasy CardMaker
+        generator.generateFromFile("characters.csv"); // Wywołaj metodę na instancji CardMaker
     }
 }
