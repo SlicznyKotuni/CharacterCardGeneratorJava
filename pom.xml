@@ -19,7 +19,18 @@
             <artifactId>javafx-fxml</artifactId>
             <version>23</version>
         </dependency>
+ 	 <dependency>
+            <groupId>com.opencsv</groupId>
+            <artifactId>opencsv</artifactId>
+            <version>5.7.1</version>
+        </dependency>
 
+        <!-- Java Image Scaling Library (optional, if advanced image scaling is needed) -->
+        <dependency>
+            <groupId>com.mortennobel</groupId>
+            <artifactId>java-image-scaling</artifactId>
+            <version>0.8.6</version>
+        </dependency>
         <!-- Apache Commons CSV -->
         <dependency>
             <groupId>org.apache.commons</groupId>
