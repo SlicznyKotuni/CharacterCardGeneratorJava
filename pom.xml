@@ -7,41 +7,111 @@
     <groupId>slicznykotuni</groupId>
     <artifactId>CharacterCardGeneratorJava</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.version>23</javafx.version>
+        <opencsv.version>5.7.1</opencsv.version>
+        <java-image-scaling.version>0.8.6</java-image-scaling.version>
+        <commons-csv.version>1.9.0</commons-csv.version>
+        <launch4j.version>2.1.2</launch4j.version>
+        <maven-assembly-plugin.version>3.6.0</maven-assembly-plugin.version>
+    </properties>
+
     <dependencies>
         <!-- JavaFX -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>23</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>23</version>
+            <version>${javafx.version}</version>
         </dependency>
- 	 <dependency>
+        <dependency>
             <groupId>com.opencsv</groupId>
             <artifactId>opencsv</artifactId>
-            <version>5.7.1</version>
+            <version>${opencsv.version}</version>
         </dependency>
-
         <!-- Java Image Scaling Library (optional, if advanced image scaling is needed) -->
         <dependency>
             <groupId>com.mortennobel</groupId>
             <artifactId>java-image-scaling</artifactId>
-            <version>0.8.6</version>
+            <version>${java-image-scaling.version}</version>
         </dependency>
-        <!-- Apache Commons CSV -->
+        <!-- Apache Commons CSV (rozważ usunięcie, jeśli używasz opencsv) -->
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-csv</artifactId>
-            <version>1.9.0</version>
+            <version>${commons-csv.version}</version>
         </dependency>
     </dependencies>
-    <properties>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>${maven-assembly-plugin.version}</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>slicznykotuni.RPGCardGenerator</mainClass>
+                        </manifest>
+                    </archive>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>com.akathist.maven.plugins.launch4j</groupId>
+                <artifactId>launch4j-maven-plugin</artifactId>
+                <version>${launch4j.version}</version>
+                <executions>
+                    <execution>
+                        <id>l4j-gui</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>launch4j</goal>
+                        </goals>
+                        <configuration>
+                            <headerType>gui</headerType>
+                            <outfile>target/CharacterCardGenerator.exe</outfile>
+                            <jar>target/${project.artifactId}-${project.version}-jar-with-dependencies.jar</jar>
+                            <errTitle>Character Card Generator</errTitle>
+                            <classPath>
+                                <mainClass>slicznykotuni.RPGCardGenerator</mainClass>
+                            </classPath>
+                            <jre>
+                                <minVersion>11</minVersion>
+                            </jre>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
