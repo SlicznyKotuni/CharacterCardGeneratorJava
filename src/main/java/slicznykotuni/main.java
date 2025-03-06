@@ -15,7 +15,7 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.application.Platform;
 
-public class main extends Application {
+public class Main extends Application {
 
     private TextArea logArea;
 
