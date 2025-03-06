@@ -127,8 +127,7 @@
                             </classPath>
                             <jre>
                                 <minVersion>17</minVersion>
-                                <!-- Jeśli chcesz użyć wbudowanego JRE -->
-                                <bundledJrePath>C:\Program Files\Java\jdk-23</bundledJrePath>
+                                <jrePath></jrePath>  <!-- ADDED THIS LINE -->
                             </jre>
                         </configuration>
                     </execution>
