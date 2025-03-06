@@ -3,7 +3,7 @@
 ## Overview
 
 Character Card Generator is a sophisticated Java application designed to create beautiful, RPG-style character cards from character images and their associated metadata. The program combines character artwork with dynamic stats, equipment, and language proficiencies to generate polished, game-ready cards.
-![Alt text](https://github.com/SlicznyKotuni/CharacterCardGeneratorJava/blob/master/output/Zulthor%20Grimroot_3.png)
+![Alt text](https://github.com/SlicznyKotuni/CharacterCardGeneratorJava/blob/master/output/Bellonith%20Xibal.png)
 ## Features
 
 ### 🎨 Visual Elements
