@@ -17,7 +17,7 @@ import java.util.Arrays;
 public class CardMaker {
 
     private final Dimension cardSize = new Dimension(912, 1368);
-    private final Dimension characterSize = new Dimension(800, 700);
+    private final Dimension characterSize = new Dimension(812, 1216);
     private final Map<String, String> assetsPath = new HashMap<>();
     private final Map<String, Map<String, Object>> uiConfig = new HashMap<>();
 
