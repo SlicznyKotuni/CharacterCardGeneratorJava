@@ -69,7 +69,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>slicznykotuni.RPGCardGenerator</mainClass>
+                            <mainClass>slicznykotuni.Main</mainClass>
                         </manifest>
                     </archive>
                     <descriptorRefs>
@@ -103,7 +103,7 @@
                             <jar>target/${project.artifactId}-${project.version}-jar-with-dependencies.jar</jar>
                             <errTitle>Character Card Generator</errTitle>
                             <classPath>
-                                <mainClass>slicznykotuni.RPGCardGenerator</mainClass>
+                                <mainClass>slicznykotuni.Main</mainClass>
                             </classPath>
                             <jre>
                                 <minVersion>11</minVersion>
